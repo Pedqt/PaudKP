@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'PopUpGagal',
+  name: 'PopUpError',
   props: {
     show: {
       type: Boolean,

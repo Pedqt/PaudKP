@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'PopUpBerhasil',
+  name: 'PopUpSukses',
   props: {
     show: {
       type: Boolean,

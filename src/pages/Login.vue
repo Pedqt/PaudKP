@@ -113,16 +113,16 @@
     </div>
     
     <!-- PopUp Komponen -->
-    <PopUpBerhasil :show="showSuccess" :message="successMessage" @close="showSuccess = false" />
-    <PopUpGagal :show="showError" :message="errorMessage" @close="showError = false" />
+    <PopUpSukses :show="showSuccess" :message="successMessage" @close="showSuccess = false" />
+    <PopUpError :show="showError" :message="errorMessage" @close="showError = false" />
   </div>
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue'
 import { useRouter } from 'vue-router'
-import PopUpBerhasil from '../components/PopUpBerhasil.vue'
-import PopUpGagal from '../components/PopUpGagal.vue'
+import PopUpSukses from '../components/PopUpSukses.vue'
+import PopUpError from '../components/PopUpError.vue'
 import { loginUser, validateCredentials } from '../utils/auth.js'
 
 const username = ref('')

@@ -43,6 +43,12 @@
             </tbody>
           </table>
         </div>
+        <div class="mt-6">
+          <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-xl">
+            <span class="font-bold text-yellow-700 flex items-center"><span class="mr-2">📝</span>Komentar/ Catatan Guru:</span>
+            <div class="text-gray-700 mt-2">{{ catatanAnak }}</div>
+          </div>
+        </div>
         <div v-if="notif.show" class="mt-6 text-center">
           <span :class="notif.type === 'success' ? 'text-green-600' : 'text-red-600'" class="font-bold text-lg">{{ notif.message }}</span>
         </div>
@@ -54,7 +60,7 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { getNilaiSiswa } from '../utils/localStorage.js'
+import { getNilaiSiswa, getSiswaList } from '../utils/localStorage.js'
 // import Navbar from '../components/Navbar.vue'
 
 // Data anak dummy (bisa diambil dari localStorage user login jika sudah ada sistem login lengkap)
@@ -67,11 +73,16 @@ const anak = ref({
 })
 
 const nilaiAnak = ref('-')
+const catatanAnak = ref('-')
 const notif = ref({ show: false, message: '', type: '' })
 
 onMounted(() => {
   const allNilai = getNilaiSiswa()
   nilaiAnak.value = allNilai[anak.value.id] !== undefined ? allNilai[anak.value.id] : '-'
+  // Ambil catatan dari siswaList
+  const siswaList = getSiswaList()
+  const siswa = siswaList.find(s => s.id === anak.value.id)
+  catatanAnak.value = siswa && siswa.catatan ? siswa.catatan : '-'
 })
 
 function formatDate(dateString) {
