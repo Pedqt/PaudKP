@@ -79,10 +79,6 @@ const updateCurrentUser = () => {
   }
 }
 
-// const isAdmin = computed(() => {
-//   const user = currentUser.value
-//   return user ? user.role === 'admin' : localStorage.getItem('isAdmin') === 'true'
-// })
 
 onMounted(() => {
   updateCurrentUser()

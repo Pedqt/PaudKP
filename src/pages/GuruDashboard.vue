@@ -346,10 +346,10 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, nextTick } from 'vue'
+import { ref, computed, nextTick } from 'vue'
 import PopUpKonfirmasi from '../components/PopUpKonfirmasi.vue'
 import PopUpEditData from '../components/PopUpEditData.vue'
-import { getNilaiSiswa, setNilaiSiswa, getSiswaList, setSiswaList } from '../utils/localStorage.js'
+import {  getSiswaList, setSiswaList } from '../utils/localStorage.js'
 import LogoPaud from '@/assets/LogoPaud.png'
 
 // Data utama
@@ -464,10 +464,7 @@ function handleFoto(e) {
 
 const siswaTersaring = computed(() => daftarSiswa.value.filter(s => s.nama.toLowerCase().includes(cari.value.toLowerCase())))
 
-onMounted(async () => {
-  // Tidak perlu request ke backend, cukup pakai data lokal
-  // Data sudah diinisialisasi di atas
-})
+
 </script> 
 
 <style scoped>
