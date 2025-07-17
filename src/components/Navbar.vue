@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <router-link to="/" class="flex items-center space-x-3 hover:scale-105 transition-transform">
         <div class="bg-white rounded-full p-2 shadow-lg">
-          <img src="/src/assets/logopaud.jpeg" alt="PAUD Anggrek Mekar Logo" class="h-12 w-auto rounded-full">
+          <img :src="LogoPaud" alt="PAUD Anggrek Mekar Logo" class="h-12 w-auto rounded-full">
         </div>
         <div class="hidden md:block">
           <h1 class="text-xl font-bold">PAUD Anggrek Mekar</h1>
@@ -66,6 +66,7 @@
 import { computed, ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { getCurrentUser, logoutUser, isLoggedIn } from '../utils/auth.js'
+import LogoPaud from '@/assets/LogoPaud.png'
 
 const router = useRouter()
 const currentUser = ref(null)
@@ -78,10 +79,10 @@ const updateCurrentUser = () => {
   }
 }
 
-const isAdmin = computed(() => {
-  const user = currentUser.value
-  return user ? user.role === 'admin' : localStorage.getItem('isAdmin') === 'true'
-})
+// const isAdmin = computed(() => {
+//   const user = currentUser.value
+//   return user ? user.role === 'admin' : localStorage.getItem('isAdmin') === 'true'
+// })
 
 onMounted(() => {
   updateCurrentUser()

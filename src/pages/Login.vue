@@ -3,14 +3,14 @@
     <!-- Background decorations -->
     <div class="absolute top-10 left-10 text-4xl opacity-20 animate-bounce">🎨</div>
     <div class="absolute top-20 right-20 text-4xl opacity-20 animate-bounce" style="animation-delay: 0.5s;">🌟</div>
-    <div class="absolute bottom-20 left-20 text-4xl opacity-20 animate-bounce" style="animation-delay: 1s;">🎓</div>
+    <div class="absolute bottom-20 left-20 opacity-20 animate-bounce" style="animation-delay: 1s;"><img :src="LogoPaud" alt="Logo PAUD" class="h-10 w-10 object-contain mx-auto" /></div>
     <div class="absolute bottom-10 right-10 text-4xl opacity-20 animate-bounce" style="animation-delay: 1.5s;">🎪</div>
     
     <div class="max-w-md w-full relative z-10">
       <div class="bg-white rounded-3xl shadow-2xl p-8 border-4 border-purple-200">
         <div class="text-center mb-8">
-          <div class="inline-block bg-gradient-to-r from-purple-500 to-pink-500 rounded-full p-4 mb-4 shadow-lg">
-            <span class="text-4xl">🎓</span>
+          <div class="inline-block bg-white rounded-full p-6 shadow-2xl mb-6">
+            <img :src="LogoPaud" alt="Logo PAUD" class="h-20 w-20 object-contain mx-auto" />
           </div>
           <h1 class="text-3xl font-bold text-purple-800 mb-2">Selamat Datang!</h1>
           <p class="text-gray-600 text-lg">🌟 Masuk ke sistem PAUD Anggrek Mekar 🌟</p>
@@ -105,7 +105,7 @@
           <p class="text-sm text-gray-600">
             Belum punya akun? 
             <router-link to="/register" class="text-purple-600 hover:text-purple-700 font-bold underline">
-              📝 Daftar di sini
+              Daftar di sini
             </router-link>
           </p>
         </div>
@@ -123,7 +123,8 @@ import { ref, reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import PopUpSukses from '../components/PopUpSukses.vue'
 import PopUpError from '../components/PopUpError.vue'
-import { loginUser, validateCredentials } from '../utils/auth.js'
+import { loginUser, validateCredentials, isLoggedIn } from '../utils/auth.js'
+import LogoPaud from '@/assets/LogoPaud.png'
 
 const username = ref('')
 const password = ref('')

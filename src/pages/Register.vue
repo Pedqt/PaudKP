@@ -5,41 +5,20 @@
     <!-- Background decorations -->
     <div class="absolute top-10 left-10 text-4xl opacity-20 animate-bounce">🎨</div>
     <div class="absolute top-20 right-20 text-4xl opacity-20 animate-bounce" style="animation-delay: 0.5s;">🌟</div>
-    <div class="absolute bottom-20 left-20 text-4xl opacity-20 animate-bounce" style="animation-delay: 1s;">🎓</div>
+    <div class="absolute bottom-20 left-20 opacity-20 animate-bounce" style="animation-delay: 1s;"><img :src="LogoPaud" alt="Logo PAUD" class="h-10 w-10 object-contain mx-auto" /></div>
     <div class="absolute bottom-10 right-10 text-4xl opacity-20 animate-bounce" style="animation-delay: 1.5s;">🎪</div>
     
     <div class="max-w-md w-full relative z-10">
       <div class="bg-white rounded-3xl shadow-2xl p-8 border-4 border-green-200">
         <div class="text-center mb-8">
-          <div class="inline-block bg-gradient-to-r from-green-500 to-yellow-500 rounded-full p-4 mb-4 shadow-lg">
-            <span class="text-4xl">📝</span>
+          <div class="inline-block bg-white rounded-full p-6 shadow-2xl mb-6">
+            <img :src="LogoPaud" alt="Logo PAUD" class="h-20 w-20 object-contain mx-auto" />
           </div>
           <h1 class="text-3xl font-bold text-green-800 mb-2">Daftar Akun Baru!</h1>
           <p class="text-gray-600 text-lg">🌟 Bergabunglah dengan keluarga PAUD Anggrek Mekar 🌟</p>
         </div>
         
         <form @submit.prevent="register" class="space-y-6">
-          <!-- Hapus field peran -->
-          <!--
-          <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 p-4 rounded-2xl border-2 border-yellow-200">
-            <label for="role" class="block text-sm font-bold text-yellow-800 mb-2">
-              👥 Peran
-            </label>
-            <select 
-              id="role"
-              v-model="formData.role" 
-              class="w-full px-4 py-3 border-2 border-yellow-200 rounded-xl focus:ring-4 focus:ring-yellow-300 focus:border-yellow-400 transition-all"
-              :class="{ 'border-red-400 focus:ring-red-300 focus:border-red-500': errors.role }"
-            >
-              <option value="">Pilih peran Anda</option>
-              <option value="orangtua">👨‍👩‍👧‍👦 Orang Tua</option>
-            </select>
-            <p v-if="errors.role" class="text-red-500 text-sm mt-2 flex items-center">
-              <span class="mr-1">⚠️</span> {{ errors.role }}
-            </p>
-          </div>
-          -->
-
           <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-4 rounded-2xl border-2 border-blue-200">
             <label for="fullName" class="block text-sm font-bold text-blue-800 mb-2">
               👤 Nama Lengkap
@@ -90,26 +69,6 @@
               <span class="mr-1">⚠️</span> {{ errors.username }}
             </p>
           </div>
-
-          <!-- Field NIP untuk Guru -->
-          <!--
-          <div v-if="formData.role === 'guru'" class="bg-gradient-to-r from-indigo-50 to-indigo-100 p-4 rounded-2xl border-2 border-indigo-200">
-            <label for="nip" class="block text-sm font-bold text-indigo-800 mb-2">
-              🆔 NIP
-            </label>
-            <input 
-              id="nip"
-              v-model="formData.nip" 
-              type="text" 
-              placeholder="Masukkan NIP Anda" 
-              class="w-full px-4 py-3 border-2 border-indigo-200 rounded-xl focus:ring-4 focus:ring-indigo-300 focus:border-indigo-400 transition-all"
-              :class="{ 'border-red-400 focus:ring-red-300 focus:border-red-500': errors.nip }"
-            />
-            <p v-if="errors.nip" class="text-red-500 text-sm mt-2 flex items-center">
-              <span class="mr-1">⚠️</span> {{ errors.nip }}
-            </p>
-          </div>
-          -->
 
           <!-- Field Nama Anak untuk Orang Tua -->
           <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 p-4 rounded-2xl border-2 border-yellow-200">
@@ -181,7 +140,7 @@
           <p class="text-sm text-gray-600">
             Sudah punya akun? 
             <router-link to="/login" class="text-green-600 hover:text-green-700 font-bold underline">
-              🚪 Masuk di sini
+              Masuk di sini
             </router-link>
           </p>
         </div>
@@ -195,6 +154,7 @@
 import { ref, reactive, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { getUsers, setUsers } from '../utils/localStorage.js'
+import LogoPaud from '@/assets/LogoPaud.png'
 
 const router = useRouter()
 const isLoading = ref(false)

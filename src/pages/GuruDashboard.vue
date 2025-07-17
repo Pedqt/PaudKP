@@ -6,7 +6,7 @@
       <!-- Judul utama dashboard guru -->
       <div class="mb-8 text-center">
             <div class="inline-block bg-white rounded-full p-4 shadow-lg mb-4">
-              <span class="text-4xl">🎓</span>
+              <img :src="LogoPaud" alt="Logo PAUD" class="h-12 w-12 object-contain mx-auto" />
             </div>
             <h1 class="text-4xl font-bold text-purple-800 mb-2">Dashboard Guru</h1>
         <p class="text-lg text-purple-600">Kelola data siswa dan input nilai dengan mudah</p>
@@ -221,7 +221,9 @@
                 <p class="text-lg text-gray-600 mb-6">
                   {{ cari ? 'Coba ubah kata kunci pencarian' : 'Mulai dengan menambahkan siswa baru di atas!' }}
                 </p>
-                <div class="text-4xl">🎨 🌟 🎓</div>
+                <div class="text-4xl flex items-center justify-center gap-2">
+                  <span>🎨</span> <span>🌟</span> <img :src="LogoPaud" alt="Logo PAUD" class="inline h-8 w-8 object-contain" />
+                </div>
               </div>
             </div>
 
@@ -348,6 +350,7 @@ import { ref, computed, onMounted, nextTick } from 'vue'
 import PopUpKonfirmasi from '../components/PopUpKonfirmasi.vue'
 import PopUpEditData from '../components/PopUpEditData.vue'
 import { getNilaiSiswa, setNilaiSiswa, getSiswaList, setSiswaList } from '../utils/localStorage.js'
+import LogoPaud from '@/assets/LogoPaud.png'
 
 // Data utama
 const daftarSiswa = ref(getSiswaList())

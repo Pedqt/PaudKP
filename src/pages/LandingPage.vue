@@ -5,7 +5,7 @@
       <div class="absolute inset-0 bg-gradient-to-br from-pink-200 via-purple-200 to-blue-200 opacity-50"></div>
       <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
         <div class="inline-block bg-white rounded-full p-6 shadow-2xl mb-6 animate-bounce">
-          <span class="text-6xl">🎓</span>
+          <img :src="LogoPaud" alt="Logo PAUD" class="h-20 w-20 object-contain mx-auto" />
         </div>
         <h1 class="text-6xl font-bold text-purple-800 mb-6 leading-tight">
           Selamat Datang di<br>
@@ -23,8 +23,8 @@
             <span class="mr-3">🚀</span> Masuk Sekarang
           </router-link>
         </div>
-        <div class="mt-8 text-4xl">
-          🎨 🌟 🎓 🎪 🎭
+        <div class="mt-8 text-4xl flex items-center justify-center gap-2">
+          <span>🎨</span> <span>🌟</span> <img :src="LogoPaud" alt="Logo PAUD" class="inline h-8 w-8 object-contain" /> <span>🎪</span> <span>🎭</span>
         </div>
       </div>
     </section>
@@ -89,7 +89,7 @@
           </div>
           <div class="bg-white p-8 rounded-2xl shadow-xl border-4 border-blue-200 hover:border-blue-300 transition-all transform hover:scale-105">
             <div class="text-center">
-              <span class="text-4xl mb-4 block">🎓</span>
+              <span class="text-4xl mb-4 block">🌟</span>
               <h3 class="text-xl font-bold text-blue-800 mb-3">Taman Kanak-Kanak</h3>
               <p class="text-gray-600 font-semibold">Usia 4-6 tahun</p>
               <p class="text-gray-500 text-sm mt-2">Persiapan masuk sekolah dasar</p>
@@ -144,8 +144,8 @@
           <p class="text-lg text-gray-600">Kegiatan harian yang menyenangkan dan mendidik</p>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div v-for="n in 6" :key="'aktivitas'+n" class="rounded-2xl overflow-hidden shadow-xl border-4 border-pink-100 bg-white flex flex-col items-center">
-            <img :src="`https://placehold.co/300x200?text=Aktivitas+${n}`" alt="Aktivitas Dummy" class="w-full h-40 object-cover" />
+          <div v-for="n in 4" :key="'aktivitas'+n" class="rounded-2xl overflow-hidden shadow-xl border-4 border-pink-100 bg-white flex flex-col items-center">
+            <img :src="[img1, img2, img3, img4][n-1]" :alt="'Aktivitas ' + n" class="w-full h-40 object-cover" />
             <div class="p-4 text-center">
               <p class="font-bold text-pink-700">Aktivitas {{ n }}</p>
               <p class="text-xs text-gray-500">Deskripsi aktivitas seru {{ n }}</p>
@@ -267,8 +267,8 @@
         >
           <span class="mr-3">📝</span> Daftar Sekarang
         </router-link>
-        <div class="mt-8 text-4xl">
-          🎨 🎪 🎭 🎓 🌟
+        <div class="mt-8 text-4xl flex items-center justify-center gap-2">
+          <span>🎨</span> <span>🎪</span> <span>🎭</span> <img :src="LogoPaud" alt="Logo PAUD" class="inline h-8 w-8 object-contain" /> <span>🌟</span>
         </div>
       </div>
     </section>
@@ -283,6 +283,11 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { isLoggedIn } from '../utils/auth.js'
+import img1 from '@/assets/1.jpg'
+import img2 from '@/assets/2.jpg'
+import img3 from '@/assets/3.jpg'
+import img4 from '@/assets/4.jpg'
+import LogoPaud from '@/assets/LogoPaud.png'
 // import Navbar from '../components/Navbar.vue'
 
 const heroRef = ref(null)

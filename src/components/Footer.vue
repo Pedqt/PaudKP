@@ -4,7 +4,6 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="text-center md:text-left">
           <div class="flex items-center justify-center md:justify-start mb-4">
-            <span class="text-3xl mr-2">🎓</span>
             <h3 class="text-2xl font-bold">PAUD Anggrek Mekar</h3>
           </div>
           <p class="text-yellow-200 text-lg leading-relaxed">
@@ -47,7 +46,7 @@
         </div>
       </div>
       <div class="border-t-2 border-yellow-300 mt-8 pt-8 text-center">
-        <div class="text-2xl mb-2">🎨 🌟 🎓 🎪 🎭</div>
+        <div class="text-2xl mb-2 flex items-center justify-center gap-2"><span>🎨</span> <span>🌟</span> <img :src="LogoPaud" alt="Logo PAUD" class="inline h-4 w-4 object-contain" /> <span>🎪</span> <span>🎭</span></div>
         <p class="text-yellow-200 font-semibold">&copy; 2025 PAUD Anggrek Mekar. Semua hak dilindungi.</p>
         <p class="text-sm text-yellow-100 mt-2">Dibuat dengan ❤️ untuk masa depan anak-anak Indonesia</p>
       </div>

@@ -4,6 +4,9 @@
     <div class="py-8">
       <div class="max-w-3xl mx-auto px-4">
       <div class="mb-8 text-center">
+        <div class="inline-block bg-white rounded-full p-4 shadow-lg mb-4">
+          <img :src="LogoPaud" alt="Logo PAUD" class="h-12 w-12 object-contain mx-auto" />
+        </div>
         <h1 class="text-3xl font-bold text-pink-800 mb-2">Dashboard Orang Tua</h1>
         <p class="text-lg text-pink-600">Lihat data dan nilai anak Anda</p>
       </div>
@@ -61,6 +64,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { getNilaiSiswa, getSiswaList } from '../utils/localStorage.js'
+import LogoPaud from '@/assets/LogoPaud.png'
 // import Navbar from '../components/Navbar.vue'
 
 // Data anak dummy (bisa diambil dari localStorage user login jika sudah ada sistem login lengkap)
