@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import LandingPage from '../pages/LandingPage.vue'
+import HomePage from '../pages/HomePage.vue'
 import Login from '../pages/Login.vue'
 import Register from '../pages/Register.vue'
 import GuruDashboard from '../pages/GuruDashboard.vue'
@@ -7,7 +7,7 @@ import OrangTuaDashboard from '../pages/OrangTuaDashboard.vue'
 import { requireGuru, requireOrangTua, redirectIfLoggedIn } from '../utils/routeGuard.js'
 
 const routes = [
-  { path: '/', component: LandingPage },
+  { path: '/', component: HomePage },
   { 
     path: '/login', 
     component: Login,

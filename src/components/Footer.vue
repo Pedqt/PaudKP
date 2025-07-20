@@ -34,10 +34,10 @@
           </div>
           <div class="space-y-2 text-yellow-200">
             <p class="flex items-center justify-center md:justify-start">
-              <span class="mr-2">📅</span> Senin - Jumat: 07:00 - 16:00
+              <span class="mr-2">📅</span> Senin - Jumat: 08:00 - 11:00
             </p>
             <p class="flex items-center justify-center md:justify-start">
-              <span class="mr-2">📅</span> Sabtu: 07:00 - 12:00
+              <span class="mr-2">📅</span> Sabtu: 08:30 - 11:00
             </p>
             <p class="flex items-center justify-center md:justify-start">
               <span class="mr-2">🚫</span> Minggu: Tutup
@@ -46,9 +46,8 @@
         </div>
       </div>
       <div class="border-t-2 border-yellow-300 mt-8 pt-8 text-center">
-        <div class="text-2xl mb-2 flex items-center justify-center gap-2"><span>🎨</span> <span>🌟</span> <img :src="LogoPaud" alt="Logo PAUD" class="inline h-4 w-4 object-contain" /> <span>🎪</span> <span>🎭</span></div>
-        <p class="text-yellow-200 font-semibold">&copy; 2025 PAUD Anggrek Mekar. Semua hak dilindungi.</p>
-        <p class="text-sm text-yellow-100 mt-2">Dibuat dengan ❤️ untuk masa depan anak-anak Indonesia</p>
+        <p class="text-yellow-200 font-semibold">&copy; 2025 PAUD Anggrek Mekar.</p>
+        <p class="text-sm text-yellow-100 mt-2">Dibuat untuk masa depan anak-anak Indonesia</p>
       </div>
     </div>
   </footer>

@@ -63,7 +63,7 @@
 </template>
 
 <script setup>
-import { computed, ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { getCurrentUser, logoutUser, isLoggedIn } from '../utils/auth.js'
 import LogoPaud from '@/assets/LogoPaud.png'

@@ -90,26 +90,28 @@
         </form>
         </transition>
         
-        <div class="mt-8 text-center">
-          <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-4 rounded-2xl border-2 border-yellow-200 mb-4">
-            <p class="text-sm text-gray-700 font-semibold mb-2">🎯 Kredensial Login:</p>
-            <div class="text-sm text-gray-600 space-y-1">
-              <p><strong>Untuk Guru:</strong></p>
-              <p>Username: <span class="font-mono bg-yellow-200 px-2 py-1 rounded-lg font-bold">Guru</span></p>
-              <p>Password: <span class="font-mono bg-yellow-200 px-2 py-1 rounded-lg font-bold">Guru123</span></p>
-              <p class="mt-2"><strong>Untuk Orang Tua:</strong></p>
-              <p>Username: <span class="font-mono bg-yellow-200 px-2 py-1 rounded-lg font-bold">Ortu</span></p>
-              <p>Password: <span class="font-mono bg-yellow-200 px-2 py-1 rounded-lg font-bold">Ortu123</span></p>
+        <!--<div class="mt-8 text-center">
+            <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-4 rounded-2xl border-2 border-yellow-200 mb-4">
+              <p class="text-sm text-gray-700 font-semibold mb-2">🎯 Kredensial Login:</p>
+              <div class="text-sm text-gray-600 space-y-1">
+                <p><strong>Untuk Guru:</strong></p>
+                <p>Username: <span class="font-mono bg-yellow-200 px-2 py-1 rounded-lg font-bold">Guru</span></p>
+                <p>Password: <span class="font-mono bg-yellow-200 px-2 py-1 rounded-lg font-bold">Guru123</span></p>
+                <p class="mt-2"><strong>Untuk Orang Tua:</strong></p>
+                <p>Username: <span class="font-mono bg-yellow-200 px-2 py-1 rounded-lg font-bold">Ortu</span></p>
+                <p>Password: <span class="font-mono bg-yellow-200 px-2 py-1 rounded-lg font-bold">Ortu123</span></p>
+              </div>
             </div>
-          </div>
+          </div>-->
+          <div class="mt-8 text-center">
           <p class="text-sm text-gray-600">
             Belum punya akun? 
             <router-link to="/register" class="text-purple-600 hover:text-purple-700 font-bold underline">
               Daftar di sini
             </router-link>
           </p>
+          </div>
         </div>
-      </div>
     </div>
     
     <!-- PopUp Komponen -->

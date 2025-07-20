@@ -63,7 +63,7 @@
             </div>
             <h3 class="text-2xl font-bold text-yellow-800 mb-4">Lingkungan Aman</h3>
             <p class="text-gray-700 text-lg leading-relaxed">
-              Lingkungan yang aman, nyaman, dan mendukung untuk pertumbuhan anak dengan fasilitas yang lengkap.
+              Lingkungan yang aman, nyaman, dan mendukung untuk pertumbuhan anak.
             </p>
           </div>
         </div>
@@ -122,15 +122,18 @@
           <h2 class="text-3xl font-bold text-blue-800 mb-2">Guru-Guru Hebat Kami</h2>
           <p class="text-lg text-gray-600">Mendidik dengan hati, penuh semangat dan kasih sayang</p>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-6 justify-items-center">
-          <div v-for="n in 5" :key="'guru'+n" class="flex flex-col items-center">
-            <div class="w-28 h-28 rounded-full bg-gradient-to-br from-yellow-200 to-pink-200 flex items-center justify-center shadow-lg border-4 border-white mb-3 overflow-hidden">
-              <img :src="`https://randomuser.me/api/portraits/lego/${n}.jpg`" alt="Guru Dummy" class="w-full h-full object-cover" />
-            </div>
-            <div class="text-center">
-              <p class="font-bold text-blue-700">Ibu/Bapak Guru {{ n }}</p>
-              <p class="text-xs text-gray-500">Guru PAUD</p>
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+          <div v-for="n in 3" :key="'guru'+n" class="border-4 w-72 h-60 flex flex-col items-center justify-center bg-white">
+            <img :src="[Guru1, Guru2, Guru3][n-1]" :alt="'Guru ' + n" class="w-48 h-40 object-cover mb-4 cursor-pointer" @click="showFullImage([Guru1, Guru2, Guru3][n-1])" />
+            <p class="font-bold text-blue-700">Guru Kami</p>
+          </div>
+        </div>
+
+        <!-- Modal Full Image -->
+        <div v-if="fullImage" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50" @click.self="closeFullImage">
+          <div class="relative">
+            <img :src="fullImage" alt="Full Guru" class="max-w-[90vw] max-h-[80vh] rounded-lg shadow-2xl border-4 border-white" />
+            <button @click="closeFullImage" class="absolute top-2 right-2 bg-white rounded-full px-3 py-1 text-black font-bold text-lg shadow">&times;</button>
           </div>
         </div>
       </div>
@@ -145,10 +148,9 @@
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
           <div v-for="n in 4" :key="'aktivitas'+n" class="rounded-2xl overflow-hidden shadow-xl border-4 border-pink-100 bg-white flex flex-col items-center">
-            <img :src="[img1, img2, img3, img4][n-1]" :alt="'Aktivitas ' + n" class="w-full h-40 object-cover" />
+            <img :src="[img1, img2, img3, img4][n-1]" :alt="'Aktivitas ' + n" class="w-full h-40 object-cover cursor-pointer" @click="showFullImage([img1, img2, img3, img4][n-1])" />
             <div class="p-4 text-center">
               <p class="font-bold text-pink-700">Aktivitas {{ n }}</p>
-              <p class="text-xs text-gray-500">Deskripsi aktivitas seru {{ n }}</p>
             </div>
           </div>
         </div>
@@ -288,6 +290,9 @@ import img2 from '@/assets/2.jpg'
 import img3 from '@/assets/3.jpg'
 import img4 from '@/assets/4.jpg'
 import LogoPaud from '@/assets/LogoPaud.png'
+import Guru1 from '@/assets/Guru1.jpg'
+import Guru2 from '@/assets/Guru2.jpg'
+import Guru3 from '@/assets/Guru3.jpg'
 // import Navbar from '../components/Navbar.vue'
 
 const heroRef = ref(null)
@@ -305,9 +310,17 @@ const sectionClass = ref({
 })
 
 const showScrollTop = ref(false)
+const fullImage = ref(null)
 
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
+function showFullImage(img) {
+  fullImage.value = img
+}
+function closeFullImage() {
+  fullImage.value = null
 }
 
 let observer
